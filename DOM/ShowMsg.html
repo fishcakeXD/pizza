@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>顯示名子</button>
+    <button id="btnFullName">顯示名子123456</button>
+    <script type="Module">
+        import { $g as $got } from "../Modules/helpers.js";
+
+
+        let btnShowName,btnFullName;
+
+        window.onload = function () {
+            btnShowName = $got("button")[0];
+            btnShowName.addEventListener("click", (showName));
+
+            btnFullName = $got("#btnFullName");
+            btnFullName.addEventListener("click", showFullName.bind(event,"123","456"));
+            
+        }
+        function showName() {
+            alert("Hi...我是123");
+        }
+
+        function showFullName(firstname, lastname) {
+            alert(`${firstname}-${lastname}`);
+        }
+    </script>
+</body>
+
+</html>
